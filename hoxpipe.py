@@ -39,7 +39,23 @@ https://pyhmmer.readthedocs.io
 
 '''
 [Workflows]
+output: columns of query hoxes vs genome-rows: metaeuk/hmmer bitscores
+
+Tree-centred Graph-based representation of evolutionary syntenic processes of gene-clusters
+- loci are nodes
+- edges are processes along the tree
+    - in extremis: one edge for each taxon
+    - edges are flavoured:
+        flavour 1: syntenic, edge-weight is distance to next
+        flavour 2: moved to another chrom
+        flavour 3: locus is lost 
+
+
 1. single seed based pyhmmer search
+    for each seed
+    for each taxon
+    multiprocessing
+
 2. MSA seed based pyhmmer search
 3. Analysis of powerset of all MSA seed based pyhmmer searches
 4. Targetted annotation and concerted single seed based pyhmmer search of all target genes
